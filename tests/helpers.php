@@ -5,7 +5,7 @@ if (! function_exists('config')) {
         static $config;
 
         if (empty($config)) {
-            $config = ['openapi' => include(__DIR__.'../src/Config/openapi.php')];
+            $config = ['openapi' => include(__DIR__.'/resources/openapi.php')];
         }
 
         $value = get_config_value($config, $key);
@@ -35,6 +35,6 @@ if (! function_exists('get_config_value')) {
 
 if (! function_exists('resource_path')) {
     function resource_path(string $append = '') {
-        return rtrim('/', sprintf('%sresources/%s', __DIR__, $append));
+        return rtrim('/', sprintf('%s/resources/%s', __DIR__, $append));
     }
 }
