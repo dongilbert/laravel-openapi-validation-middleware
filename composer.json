@@ -1,16 +1,7 @@
 {
   "name": "treblig/laravel-openapi-validation-middleware",
-  "description": "Laravel middleware for validating openapi requests/responses",
+  "description": "Laravel middleware for validating OpenAPI requests/responses",
   "type": "library",
-  "require": {
-    "php": "~7.2",
-    "illuminate/routing": "~5.7",
-    "illuminate/support": "~5.7.0",
-    "symfony/http-foundation": "~4.2"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^8.4"
-  },
   "license": "MIT",
   "authors": [
     {
@@ -18,6 +9,16 @@
       "email": "don@dongilbert.net"
     }
   ],
+  "require": {
+    "php": "~7.2",
+    "illuminate/routing": "~5.7",
+    "illuminate/support": "~5.7.0",
+    "symfony/http-foundation": "~4.2",
+    "hkarlstrom/openapi-reader": "^0.3.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.4"
+  },
   "autoload": {
     "psr-4": {
       "Treblig\\OpenAPIValidationMiddleware\\": "./src",

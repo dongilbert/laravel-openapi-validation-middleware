@@ -10,7 +10,8 @@ package was required.
 - PHP 7.2
 
 ### Installation
-Installation via composer is recommended. The Laravel Service provider will be auto-registered.
+Installation via composer is recommended. The Laravel Service provider will be auto-registered. You must also publish
+the configuration file and update the 
 
 ```shell script
 composer require treblig/laravel-openapi-validation-middleware
@@ -31,10 +32,12 @@ Route::get('/users/{user}', 'OpenAPIUserController')
 ```
 
 ### Configuration
-This package comes with basic configuration. It looks for an `openapi.json` file in your `/resources/` directory. You
-can change the path to your OpenAPI description document either by publishing the package config file and updating
-the `openapi_document_path` parameter, or you can set the `TREBLIG_OPENAPI_DOCUMENT_PATH` environment variable. This
-can be either a local file path or remote HTTP resource link.
+
+To leverage this package you must set the `document_path` config value. You can set this via the `TREBLIG_OPENAPI_DOCUMENT_PATH`
+env var, or by updating the value directly in the config file. This can be either a local file path or remote HTTP resource link.
+
+> Note: If you want to leverage a Laravel `resource_path`, you must set the value in your config file rather than
+> updating the environment variable. 
 
 By default, both requests and responses are subject to the validation check. You can change this behavior in the
 `openapi.php` configuration file directly, or you can set one or both of the
