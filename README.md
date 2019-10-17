@@ -33,12 +33,14 @@ Route::get('/users/{user}', 'OpenAPIUserController')
 
 ### Configuration
 
-To leverage this package you must set the `document_path` config value. You can set this via the `TREBLIG_OPENAPI_DOCUMENT_PATH`
-env var, or by updating the value directly in the config file. This can be either a local file path or remote HTTP resource link.
+Publish the package configuration file via:
 
-> Note: If you want to leverage a Laravel `resource_path`, you must set the value in your config file rather than
-> updating the environment variable. 
+```bash
+php artisan vendor:publish --provider="Treblig\OpenAPIValidationMiddleware\ServiceProvider"
+```
+
+To leverage this package you must set the `document_path` config value. This can be either a local file path or remote
+HTTP resource link.
 
 By default, both requests and responses are subject to the validation check. You can change this behavior in the
-`openapi.php` configuration file directly, or you can set one or both of the
-`TREBLIG_OPENAPI_VALIDATE_REQUESTS` or `TREBLIG_OPENAPI_VALIDATE_RESPONSES` environment variables to `false`.
+`openapi.php` configuration file.
